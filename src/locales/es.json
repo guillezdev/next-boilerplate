@@ -1,5 +1,5 @@
 {
-	"title": "CDM Iniciador de Nextjs",
+	"title": "Iniciador de Nextjs",
 	"description": "Una plantilla para iniciar un proyecto de Nextjs con TypeScript, ESLint, Prettier, Tailwind CSS and PostCSS.",
-	"og:description": "App generada usando CDM Iniciador de Nextjs"
+	"og:description": "App generada usando Iniciador de Nextjs"
 }

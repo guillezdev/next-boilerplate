@@ -1,5 +1,5 @@
 {
-	"title": "CDM Nextjs Starter",
+	"title": "Nextjs Starter",
 	"description": "A Next.js starter template with TypeScript, ESLint, Prettier, Tailwind CSS and PostCSS.",
-	"og:description": "App generated using CDM Starter"
+	"og:description": "App generated using Starter"
 }
