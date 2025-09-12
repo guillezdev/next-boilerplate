@@ -1,5 +1,5 @@
-import {AppConfig} from "@/utils/AppConfig";
 import {createNavigation} from "next-intl/navigation";
+import {AppConfig} from "@/utils/AppConfig";
 import {defineRouting} from "next-intl/routing";
 
 export const routingFromAppConfig = {

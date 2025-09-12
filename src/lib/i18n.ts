@@ -1,6 +1,6 @@
-import {AppConfig} from "@/utils/AppConfig";
 import {getRequestConfig, type RequestConfig} from "next-intl/server";
 import {notFound} from "next/navigation";
+import {AppConfig} from "@/utils/AppConfig";
 
 export default getRequestConfig(async ({requestLocale}) => {
 	const locale = await requestLocale;

@@ -1,15 +1,13 @@
-import {MetadataRoute} from "next";
+import type {MetadataRoute} from "next";
 
-import {AppConfig} from "@/utils/AppConfig";
+export const dynamic = "force-static";
 
 export default function robots(): MetadataRoute.Robots {
 	return {
 		rules: {
 			userAgent: "*",
-			allow: !AppConfig.creatorWebsite?.includes("dev") ? "/" : undefined,
-			disallow: AppConfig.creatorWebsite?.includes("dev") ? "/" : undefined,
+			allow: "/",
 		},
-		host: AppConfig.creatorWebsite,
-		sitemap: `${AppConfig.creatorWebsite}/sitemap.xml`,
+		sitemap: process.env.NEXT_PUBLIC_WEBITE_URL,
 	};
 }

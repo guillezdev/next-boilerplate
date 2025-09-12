@@ -1,4 +1,3 @@
-import {type AbstractIntlMessages} from "next-intl";
 import {type LocalePrefix} from "next-intl/routing";
 import {SVGProps} from "react";
 
@@ -8,7 +7,7 @@ export type IconProps = SVGProps<SVGSVGElement>;
 
 export type LayoutProps = Readonly<{
 	children: React.ReactNode;
-	params: {locale: string; messages: AbstractIntlMessages};
+	params: Promise<{locale: string}>;
 }>;
 
 export type AppPageProps<T = {}> = {
