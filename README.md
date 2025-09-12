@@ -1,4 +1,4 @@
-# Starter for Next.js 14+, Tailwind CSS 3+ and TypeScript.
+# Starter for Next.js 15+, Tailwind CSS 3+ and TypeScript.
 
 <p align="center">
   <img height="150" src="./src/assets/images/next-ssg-boilerplate-logo.png" alt="Next js starter banner">
