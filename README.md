@@ -179,28 +179,6 @@ To add new translations, follow these steps:
 2. In the `AppConfig` file within `utils`, add the prefix of the new translation to the `locales` attribute and determine if it will be the default.
 3. In the `middleware` configuration object, add the prefix of the new translation to the regular expression.
 
--   Example with a dynamic page:
-
-```typescript
-import {unstable_setRequestLocale} from "next-intl/server";
-import useGetDynamicTranslations from "@/hooks/useGetDynamicTranslations";
-
-interface HomeProps {
-	params: {locale: string};
-}
-
-export default async function Home({params}: HomeProps) {
-	unstable_setRequestLocale(params.locale);
-	const t = await useGetDynamicTranslations({locale: params.locale});
-
-	return (
-		<section>
-			<h1>{t("title")}</h1>
-		</section>
-	);
-}
-```
-
 -   Example with a static page:
 
 ```typescript
