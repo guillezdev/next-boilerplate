@@ -1,53 +1,36 @@
-# Starter for Next.js 15+, Tailwind CSS 3+ and TypeScript.
+# Next.js SSG Boilerplate with Next-Intl
 
 <p align="center">
-  <img height="150" src="./src/assets/images/next-ssg-boilerplate-logo.png" alt="Next js starter banner">
+  <img height="150" src="./src/assets/images/next-ssg-boilerplate-logo.png" alt="Next.js SSG Boilerplate with Next-Intl">
 </p>
 
-🚀 Starter for Next.js with App Router support, Tailwind CSS, and TypeScript ⚡️ Prioritizing developer experience first: Next.js, TypeScript, ESLint, Prettier, PostCSS, Tailwind CSS.
+<p align="center">
+  <strong>A production-ready boilerplate for building static sites with Next.js, featuring internationalization with `next-intl`.</strong>
+</p>
 
-Clone this project and use it! ⚡️
+<p align="center">
+  <a href="https://github.com/guillezdev/next-boilerplate/stargazers">
+    <img src="https://img.shields.io/github/stars/guillezdev/next-boilerplate" alt="GitHub stars">
+  </a>
+  <a href="https://github.com/guillezdev/next-boilerplate/network/members">
+    <img src="https://img.shields.io/github/forks/guillezdev/next-boilerplate" alt="GitHub forks">
+  </a>
+</p>
 
-### Features
+---
 
-Developer experience first, extremely flexible code structure and only keep what you need:
+This boilerplate is designed to provide a solid foundation for building fast, scalable, and SEO-friendly static websites with Next.js. It comes pre-configured with a range of modern tools and features to enhance your development experience.
 
--   ⚡ [Next.js](https://nextjs.org) with App Router support
--   🔥 Type checking [TypeScript](https://www.typescriptlang.org)
--   💎 Integrate with [Tailwind CSS](https://tailwindcss.com)
--   ✅ Strict Mode for TypeScript and React 18
--   📏 Linter with [ESLint](https://eslint.org)
--   💖 Code Formatter with [Prettier](https://prettier.io)
--   💡 Absolute Imports using `@` prefix
--   🗺️ Sitemap.xml and robots.txt
--   🌐 Multi-language (i18n) with [next-intl](https://next-intl-docs.vercel.app/)
+## Features
 
-Built-in feature from Next.js:
-
--   ☕ Minify HTML & CSS
--   💨 Live reload
--   ✅ Cache busting
-
-### Philosophy
-
--   Easy to customize
--   Minimal code
--   SEO-friendly
-
-### Requirements
-
--   Node.js 19+ and pnpm
-
-## Getting started
-
-### Steps to run this starter project:
-
--   Clone the proyect repo from Github
--   Open the project folder
--   Open the terminal and run `pnpm` to install app dependencies
--   Run `pnpm dev` and open (by default) `localhost:3000`
-
-🎊🎊🎊 And that is it! 🎊🎊🎊
+-   🚀 **Next.js 15:** The latest version of the popular React framework, with support for the App Router.
+-   🌍 **Internationalization (i18n):** Pre-configured with `next-intl` for easy multi-language support.
+-   🎨 **Tailwind CSS 3:** A utility-first CSS framework for rapid UI development.
+-   🔒 **TypeScript:** Static typing for improved code quality and maintainability.
+-   ✨ **Code Quality:** Includes ESLint and Prettier for consistent code formatting and style.
+-   🗺️ **SEO Optimized:** Automatic generation of `sitemap.xml` and `robots.txt`.
+-   💡 **Absolute Imports:** Use the `@` prefix for cleaner import paths.
+-   📦 **PNPM:** A fast and efficient package manager.
 
 ### Environment variables
 
@@ -55,16 +38,75 @@ Built-in feature from Next.js:
 
 🌟 **_NOTE_**: 👀You can add environment variables types in `src/types/env.ts`. In this way, you make your code easier to understand and maintain.
 
-### Yarn Scripts
+## Getting Started
 
-The following utility Yarn scripts are available:
+### Prerequisites
 
--   `format:check`: Gets a list of all unformatted code in the project.
--   `format:fix`: Fixes the format issues of all the unformatted files.
--   `prettier`: Runs `prettier` and below functionality can be added with `--arg`.
--   `lint`: Runs configured linter.
+-   Node.js 19+
+-   pnpm
 
-⚠️ **_NOTE_**: 🚨It is highly recommended to run `yarn format:check` and `yarn format:fix` before committing as this would prevent uploading changes with unformatted code.
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/guillezdev/next-boilerplate.git
+    ```
+
+2.  **Navigate to the project directory:**
+
+    ```bash
+    cd next-boilerplate
+    ```
+
+3.  **Install the dependencies:**
+
+    ```bash
+    pnpm install
+    ```
+
+4.  **Run the development server:**
+
+    ```bash
+    pnpm dev
+    ```
+
+The application will be available at `http://localhost:3000`.
+
+## Available Scripts
+
+-   `pnpm dev`: Starts the development server.
+-   `pnpm build`: Builds the application for production.
+-   `pnpm start`: Starts the production server.
+-   `pnpm lint`: Lints the codebase for errors.
+-   `pnpm format:check`: Checks for formatting issues.
+-   `pnpm format:fix`: Fixes formatting issues.
+
+## Internationalization (i18n)
+
+This boilerplate uses `next-intl` for internationalization. The configuration is located in the `src/lib/i18n.ts` file, and the language files are in the `src/locales` directory.
+
+### Adding a new language
+
+1.  **Create a new JSON file** in the `src/locales` directory with the language code as the filename (e.g., `fr.json`).
+2.  **Add the new language** to the `locales` array in `src/utils/AppConfig.ts`.
+3.  **Update the `middleware.ts`** file to include the new language in the `locales` array.
+
+### Using translations in your components
+
+You can use the `useTranslations` hook to access the translations in your components.
+
+```tsx
+import { useTranslations } from "next-intl";
+
+export default function MyComponent() {
+  const t = useTranslations("MyComponent");
+
+  return <h1>{t("title")}</h1>;
+}
+```
+
+For more information, please refer to the [`next-intl` documentation](https://next-intl-docs.vercel.app/).
 
 ### Project structure
 
@@ -96,15 +138,13 @@ The following utility Yarn scripts are available:
 
 ## Customization
 
-You can easily configure Next js Starter by making a search in the whole project with `FIXME:` for making quick customization. Here is some of the most important files to customize:
+-   **`src/utils/AppConfig.ts`**: Basic website configuration.
+-   **`public/favicon.ico`**: Website favicon.
+-   **`src/layouts/BaseLayout.tsx`**: Default layout for pages.
+-   **`tailwind.config.ts`**: Tailwind CSS theme customization.
+-   **`.eslintrc.json`**: ESLint configuration.
+-   **`.prettierrc`**: Prettier configuration.
 
--   `utils/AppConfig`: your website base config
--   `public/favicon.ico`: your website favicon.
--   `src/layouts/BaseTemplate.tsx`: default base layout
--   `next.config.mjs`: Next.js configuration
--   `tailwind.config.js`: default tailwind theme
--   `.eslintrc.json`: linter config
--   `.prettierrc`: code formatter config
 
 ### Theme
 
@@ -156,61 +196,6 @@ In the `utils` file, you will find the `AppConfig.ts` file. This file exports a 
 -   `localePrefix`: Config to handle show locale prefix on the url. `always` - `as-needed` - `never`
 -   `defaultLocale`: Default locale. By default is `es`;
 
-### Translation (i18n) setup
-
-For translation, the project uses `next-intl`. The project has two preset configurations in the locales directory in `json` format corresponding to the Spanish and English languages. As a developer, you can modify both files with the corresponding texts. In the components, you should use the `useTranslations` hook and pass the key of the text you want to translate as a parameter. Example:
-
-```typescript
-import {useTranslations} from "next-intl";
-
-export default function Home() {
-	const t = useTranslations();
-	return (
-		<section>
-			<h1>{t("title")}</h1>
-		</section>
-	);
-}
-```
-
-To add new translations, follow these steps:
-
-1. Add a new `json` file inside the `locales` folder. Ex. `fr.json`
-2. In the `AppConfig` file within `utils`, add the prefix of the new translation to the `locales` attribute and determine if it will be the default.
-3. In the `middleware` configuration object, add the prefix of the new translation to the regular expression.
-
--   Example with a static page:
-
-```typescript
-import {useTranslations} from "next-intl";
-import {unstable_setRequestLocale} from "next-intl/server";
-
-interface HomeProps {
-	params: {locale: string};
-}
-
-export default function Home({params}: HomeProps) {
-	unstable_setRequestLocale(params.locale);
-	const t = useTranslations();
-
-	return (
-		<section>
-			<h1>{t("title")}</h1>
-		</section>
-	);
-}
-```
-
-ℹ️ **_INFO_** To navigate between pages, consider using the `Link` component which is imported from:
-
-```typescript
-import {Link} from "@/lib/i18nNavigation";
-```
-
-This component extends the configuration of the native Next.js Link component and automatically applies the translation prefix to the URL.
-
-🎉 That's it! To use your new translation, go to your component and follow the steps on how to use the translation in your components. For more information, visit [next-intl](https://next-intl-docs.vercel.app/) 🚀
-
 ### Metadata Configuration
 
 This application uses the new [Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) from Next.js to manage metadata. Here's how to configure it:
@@ -252,6 +237,15 @@ export async function generateMetadata({params, searchParams}: Props, parent: Re
 export default function Page({params, searchParams}: Props) {}
 ```
 
+## Deployment
+
+This boilerplate is ready to be deployed to any static hosting provider, such as Vercel, Netlify, or GitHub Pages.
+
 ---
 
-### Made with ❤️ by Guillezdev. 🧑‍💻Happy coding!🧑‍💻 ☕
+<p align="center">
+  Made with ❤️ by <a href="https://github.com/guillezdev">Guillezdev</a>.
+</p>
+<p align="center">
+  Happy coding! 🧑‍💻
+</p>
